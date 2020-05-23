@@ -17,7 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('projects', 'ProjectsController');
+Route::post('/projects', 'ProjectsController@store');
+Route::get('/projects/create', 'ProjectsController@create');
+Route::get('/lists', 'ProjectsController@lists');
+
+
+// CODECHIEF
+Route::get('vuejs/form', 'VueJSController@index');
+Route::post('vuejs/form', 'VueJSController@store');
 
 Auth::routes();
 

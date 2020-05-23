@@ -15,18 +15,22 @@ class ProjectsController extends Controller
     	   ]);
     }
 
-    public function store()
+    public function store(Request $request)
     {
-    	$this->validate(request(), [
-    	      'name' => 'required',
-    	      'description' => 'required'
-    	  ]);
+    	$attributes = $request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]);
 
-    	Project::forceCreate([
-    		'name' => request('name'),
-    		'description' => request('description')
-    	]);
+    	Project::forceCreate($attributes);
 
     	return ['message' => 'Project Created!'];
+    }
+
+
+    //Vue js lists
+    public function lists()
+    {
+        return view('lists');
     }
 }
