@@ -35,23 +35,16 @@
   <div class="container">
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="" alt="" width="72" height="72">
-      <h2>VUE JS LISTS</h2>
-      <p class="lead">Vue JS application form using OOPs</p>
+      <h2>VUE JS ATTRIBUTE AND CLASS NAME BINDING</h2>
     </div>
 
     <div id="root">
-      <div class="col-md-12 order-md-2 mb-4">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-muted">Your Projects</span>
-          <span class="badge badge-secondary badge-pill">0</span>
-        </h4>
-        <ul class="list-group mb-3">
-         <li class="list-group-item d-flex justify-content-between lh-condensed" v-for="name in names" v-text="name">
-        </li>
-      </ul>
-
-      <input type="text" v-model="newName" class="form-control" name="name">
-      <button class="btn btn-success" @click="addName">Submit</button>
+      <task>To do lissssst</task>
+      <task>list item one</task>
+      <task>list item two</task>
+      <task>list item three</task>
+      <task>lists item four</task>
+      <task>lists item five</task>
     </div>
   </div>
 </div>
@@ -61,23 +54,13 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <!-- vue js scripts -->
 <script>
-  var app = new Vue({
-    el : '#root',
+  Vue.component('task', {
+    template:'<li><slot></slot></li>'
+  });
 
-    data:
-    {
-      newName : '',
-      names:['Joe', 'Mary']
-    },
-
-    methods:{
-      addName()
-      {
-        this.names.push(this.newName);
-        this.newName = '';
-      }
-    }
-});
+  new Vue({
+    el:'#root'
+  });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

@@ -20,6 +20,10 @@ Route::get('/', function () {
 Route::post('/projects', 'ProjectsController@store');
 Route::get('/projects/create', 'ProjectsController@create');
 Route::get('/lists', 'ProjectsController@lists');
+Route::get('/attribute_and_class_name_binding', 'ProjectsController@attribute');
+Route::get('/components', 'ProjectsController@components');
+Route::get('/components1', 'ProjectsController@components1');
+Route::get('/practicalcomponents', 'ProjectsController@practicalcomponents');
 
 
 // CODECHIEF

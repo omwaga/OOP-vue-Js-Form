@@ -35,23 +35,11 @@
   <div class="container">
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="" alt="" width="72" height="72">
-      <h2>VUE JS LISTS</h2>
-      <p class="lead">Vue JS application form using OOPs</p>
+      <h2>VUE JS ATTRIBUTE AND CLASS NAME BINDING</h2>
     </div>
 
     <div id="root">
-      <div class="col-md-12 order-md-2 mb-4">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-muted">Your Projects</span>
-          <span class="badge badge-secondary badge-pill">0</span>
-        </h4>
-        <ul class="list-group mb-3">
-         <li class="list-group-item d-flex justify-content-between lh-condensed" v-for="name in names" v-text="name">
-        </li>
-      </ul>
-
-      <input type="text" v-model="newName" class="form-control" name="name">
-      <button class="btn btn-success" @click="addName">Submit</button>
+      <task-list>To do lissssst</task-list>
     </div>
   </div>
 </div>
@@ -61,23 +49,30 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <!-- vue js scripts -->
 <script>
-  var app = new Vue({
-    el : '#root',
+  Vue.component('task-list', {
+    template:'<div><task v-for="task in tasks">@{{task.task}}</task></div>',
 
-    data:
-    {
-      newName : '',
-      names:['Joe', 'Mary']
-    },
-
-    methods:{
-      addName()
-      {
-        this.names.push(this.newName);
-        this.newName = '';
+    data(){
+      return {
+        tasks: [
+        {task: 'Go to the store', complete:true},
+        {task: 'Go to the market', complete:false},
+        {task: 'Go to the library', complete:true},
+        {task: 'Go to the super', complete:false},
+        {task: 'Go to the balll', complete:true},
+        {task: 'Go to the stghjkl;ore', complete:false}
+        ]
       }
     }
-});
+  });
+
+  Vue.component('task', {
+    template:'<li><slot></slot></li>'
+  });
+
+  new Vue({
+    el:'#root'
+  });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

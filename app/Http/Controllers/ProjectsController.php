@@ -33,4 +33,29 @@ class ProjectsController extends Controller
     {
         return view('lists');
     }
+
+
+    //Attribute and class name binding
+    public function attribute()
+    {
+        return view('attribute');
+    }
+
+    //components 0
+    public function components()
+    {
+        return view('components');
+    }
+
+    //components 1
+    public function components1()
+    {
+        return view('components1');
+    }
+
+    //Practical components 
+    public function practicalcomponents()
+    {
+        return view('practicalcomponents');
+    }
 }
