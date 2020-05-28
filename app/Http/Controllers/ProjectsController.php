@@ -58,4 +58,23 @@ class ProjectsController extends Controller
     {
         return view('practicalcomponents');
     }
+
+    // Practical componentsexercise 
+    public function practicalex()
+    {
+        return view('practicalex');
+    }
+
+    // Practical componentsexercise 1
+    public function practicalex1()
+    {
+        return view('practicalex1');
+    }
+
+
+    // Modal Component
+    public function modal()
+    {
+        return view('modal');
+    }
 }

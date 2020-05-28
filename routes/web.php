@@ -24,6 +24,9 @@ Route::get('/attribute_and_class_name_binding', 'ProjectsController@attribute');
 Route::get('/components', 'ProjectsController@components');
 Route::get('/components1', 'ProjectsController@components1');
 Route::get('/practicalcomponents', 'ProjectsController@practicalcomponents');
+Route::get('/practicalex', 'ProjectsController@practicalex');
+Route::get('/practicalex1', 'ProjectsController@practicalex1');
+Route::get('/modal', 'ProjectsController@modal');//incomplete
 
 
 // CODECHIEF
