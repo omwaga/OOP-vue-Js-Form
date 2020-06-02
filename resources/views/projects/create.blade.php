@@ -67,7 +67,7 @@
           <label for="address">Project Name:</label>
           <input type="text" class="form-control" name="name" id="address" placeholder="Name" v-model="name">
           
-          <span class="text text-danger" v-text="errors.get(name)"></span>
+          <span class="text text-danger" v-text="errors.get('name')"></span>
         </div>
 
         <div class="mb-3">
@@ -76,7 +76,7 @@
           <span class="text text-danger" v-text="errors.get('description')"></span>
         </div>
         <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" :disabled="errors.any()">Submit</button>
       </form>
     </div>
   </div>

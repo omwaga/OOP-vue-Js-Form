@@ -17,11 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/projects/create', 'ProjectsController@create');
 Route::post('/projects', 'ProjectsController@store');
 Route::get('/projects/create', 'ProjectsController@create');
 Route::get('/lists', 'ProjectsController@lists');
 Route::get('/attribute_and_class_name_binding', 'ProjectsController@attribute');
 Route::get('/components', 'ProjectsController@components');
+Route::get('/computed', 'ProjectsController@computed');
 Route::get('/components1', 'ProjectsController@components1');
 Route::get('/practicalcomponents', 'ProjectsController@practicalcomponents');
 Route::get('/practicalex', 'ProjectsController@practicalex');

@@ -41,6 +41,12 @@ class ProjectsController extends Controller
         return view('attribute');
     }
 
+    //computed
+    public function computed()
+    {
+        return view('computed');
+    }
+
     //components 0
     public function components()
     {
