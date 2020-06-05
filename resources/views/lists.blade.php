@@ -45,16 +45,28 @@
           <span class="text-muted">Your Projects</span>
           <span class="badge badge-secondary badge-pill">0</span>
         </h4>
-        <ul class="list-group mb-3">
-         <li class="list-group-item d-flex justify-content-between lh-condensed" v-for="name in names" v-text="name">
-        </li>
-      </ul>
+        <div class=""  v-for="name in names">
+          <div class="row">
+            <div class="col-md-8">
 
-      <input type="text" v-model="newName" class="form-control" name="name">
-      <button class="btn btn-success" @click="addName">Submit</button>
-    </div>
-  </div>
-</div>
+             <label v-text="name.name"></label>
+
+             <p v-text="name.description"></p>
+           </div>
+           <div class="col-md-4">
+
+             <label v-text="name.created_at"></label>
+
+             <label v-text="name.updated_at"></label>
+           </div>
+         </div><hr>
+       </div>
+
+       <input type="text" v-model="newName" class="form-control" name="name">
+       <button class="btn btn-success" @click="addName">Submit</button>
+     </div>
+   </div>
+ </div>
 </body>
 
 
@@ -67,7 +79,92 @@
     data:
     {
       newName : '',
-      names:['Joe', 'Mary']
+      names:[
+      {
+        "id": 4,
+        "name": "Software Development",
+        "description": "New",
+        "created_at": "2020-05-19T12:29:31.000000Z",
+        "updated_at": "2020-05-19T12:29:31.000000Z"
+      },
+      {
+        "id": 5,
+        "name": "Photography",
+        "description": "another task",
+        "created_at": "2020-05-19T12:30:47.000000Z",
+        "updated_at": "2020-05-19T12:30:47.000000Z"
+      },
+      {
+        "id": 6,
+        "name": "Collo Updated 1",
+        "description": "My taskk",
+        "created_at": "2020-05-19T12:49:36.000000Z",
+        "updated_at": "2020-05-19T12:49:36.000000Z"
+      },
+      {
+        "id": 7,
+        "name": "Collo Updated 1",
+        "description": "another task",
+        "created_at": "2020-06-02T17:52:46.000000Z",
+        "updated_at": "2020-06-02T17:52:46.000000Z"
+      },
+      {
+        "id": 8,
+        "name": "Software Development",
+        "description": "another task",
+        "created_at": "2020-06-02T17:53:00.000000Z",
+        "updated_at": "2020-06-02T17:53:00.000000Z"
+      },
+      {
+        "id": 9,
+        "name": "Collo Updated 1",
+        "description": "w",
+        "created_at": "2020-06-02T18:17:43.000000Z",
+        "updated_at": "2020-06-02T18:17:43.000000Z"
+      },
+      {
+        "id": 10,
+        "name": "Collo Updatedssdsd",
+        "description": "My taskk",
+        "created_at": "2020-06-02T19:04:40.000000Z",
+        "updated_at": "2020-06-02T19:04:40.000000Z"
+      },
+      {
+        "id": 11,
+        "name": "Collo Updated nowwwww",
+        "description": "wsdfghjkl/",
+        "created_at": "2020-06-02T19:05:20.000000Z",
+        "updated_at": "2020-06-02T19:05:20.000000Z"
+      },
+      {
+        "id": 12,
+        "name": "Software Development",
+        "description": "My taskk",
+        "created_at": "2020-06-03T11:19:19.000000Z",
+        "updated_at": "2020-06-03T11:19:19.000000Z"
+      },
+      {
+        "id": 13,
+        "name": "Collo Updated 1",
+        "description": "another task",
+        "created_at": "2020-06-03T11:34:22.000000Z",
+        "updated_at": "2020-06-03T11:34:22.000000Z"
+      },
+      {
+        "id": 14,
+        "name": "Mobile Phones",
+        "description": "another task",
+        "created_at": "2020-06-03T11:37:34.000000Z",
+        "updated_at": "2020-06-03T11:37:34.000000Z"
+      },
+      {
+        "id": 15,
+        "name": "w",
+        "description": "great",
+        "created_at": "2020-06-03T11:44:50.000000Z",
+        "updated_at": "2020-06-03T11:44:50.000000Z"
+      }
+      ]
     },
 
     methods:{
@@ -77,7 +174,7 @@
         this.newName = '';
       }
     }
-});
+  });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>
